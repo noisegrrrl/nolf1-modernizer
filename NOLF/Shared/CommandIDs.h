@@ -34,9 +34,9 @@
 #define COMMAND_ID_ALT_FIRING		15
 #define COMMAND_ID_LOOKUP			16
 #define COMMAND_ID_LOOKDOWN			17
+#define COMMAND_ID_DUCKLOCK			18
 
 // These are available for use...
-#define COMMAND_ID_UNUSED			18
 #define COMMAND_ID_UNUSED2			19
 
 

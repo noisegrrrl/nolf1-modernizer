@@ -45,6 +45,9 @@ The goal of NOLF Modernizer is to help fix some long standing bugs, and update s
 - Added missing ambient track for the Main Theme to the Jukebox.
 - Added some jukebox strings to CRes.dll
 
+## Patch 5
+- Added a bind a key to toggle crouch instead of holding it based on shellcracker's implementation.
+
 ## Additional Config/Console Commands
 
 The following are new config/console commands:

@@ -188,6 +188,7 @@ CPlayerObj::CPlayerObj() : CCharacter()
 	m_eState				= PS_DEAD;
     m_bGodMode              = LTFALSE;
     m_bRunLock              = LTFALSE;
+    m_bDuckLock             = LTFALSE;
     m_bAllowInput           = LTTRUE;
     m_b3rdPersonView        = LTFALSE;
 	m_eGameType				= SINGLE;
@@ -1314,7 +1315,7 @@ void CPlayerObj::UpdateCommands()
 
         if (!m_bBodyOnLadder && !m_bSpectatorMode && !IsLiquid(m_eContainerCode))
         {
-            if (g_pLTServer->IsCommandOn(m_hClient, COMMAND_ID_DUCK) || m_bForceDuck)
+            if (g_pLTServer->IsCommandOn(m_hClient, COMMAND_ID_DUCK) || m_bForceDuck || m_bDuckLock)
 		    {
 				m_Animator.SetMovement(CAnimatorPlayer::eCrouching);
 		    }
@@ -1739,6 +1740,31 @@ void CPlayerObj::ToggleRunLock()
     HMESSAGEWRITE hMessage = g_pLTServer->StartMessage(m_hClient, MID_COMMAND_TOGGLE);
     g_pLTServer->WriteToMessageByte(hMessage, COMMAND_ID_RUNLOCK);
     g_pLTServer->WriteToMessageByte(hMessage, m_bRunLock);
+    g_pLTServer->EndMessage(hMessage);
+}
+
+// ----------------------------------------------------------------------- //
+//
+//	ROUTINE:	CPlayerObj::ToggleDuckLock
+//
+//	PURPOSE:	Turn on/off crouch lock
+//
+// ----------------------------------------------------------------------- //
+
+void CPlayerObj::ToggleDuckLock()
+{
+	if (!m_hClient) return;
+
+	// Toggle crouch lock...
+
+	m_bDuckLock = !m_bDuckLock;
+
+
+	// Tell client about the change...
+
+    HMESSAGEWRITE hMessage = g_pLTServer->StartMessage(m_hClient, MID_COMMAND_TOGGLE);
+    g_pLTServer->WriteToMessageByte(hMessage, COMMAND_ID_DUCKLOCK);
+    g_pLTServer->WriteToMessageByte(hMessage, m_bDuckLock);
     g_pLTServer->EndMessage(hMessage);
 }
 

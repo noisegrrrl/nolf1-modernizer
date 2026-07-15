@@ -50,8 +50,10 @@ public:
     LTBOOL       UseJoystick()               { return GetBoolVar("UseJoystick"); }
     LTBOOL       Lookspring()                { return GetBoolVar("LookSpring"); }
     LTBOOL       RunLock()                   { return GetBoolVar("RunLock"); }
+    LTBOOL       DuckLock()                  { return GetBoolVar("DuckLock"); }
 
     void        SetRunLock (LTBOOL bRunLock) { SetBoolVar("RunLock",bRunLock); }
+    void        SetDuckLock (LTBOOL bDuckLock) { SetBoolVar("DuckLock",bDuckLock); }
 
 	// sound access functions
 
