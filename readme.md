@@ -46,7 +46,7 @@ The goal of NOLF Modernizer is to help fix some long standing bugs, and update s
 - Added some jukebox strings to CRes.dll
 
 ## Patch 5?
-- Added a bind a key to toggle crouch instead of holding it based on shellcracker's implementation.
+- Added a bind a key to toggle crouch instead of holding it based on shellcracker's implementation. (You need to add `AddAction CrouchLock 18` to your autoexec.cfg for it to works for now)
 - Allow opening the console with Shift+Esc.
 - Allow closing popups with right mouse button and "activate" key.
 - Remember what ammo was last used with which weapon.
