@@ -1507,6 +1507,7 @@ void CGameServerShell::OnCommandOn(HCLIENT hClient, int command)
 	switch (command)
 	{
 		case COMMAND_ID_RUNLOCK	: pPlayer->ToggleRunLock(); break;
+                case COMMAND_ID_DUCKLOCK : pPlayer->ToggleDuckLock(); break;
 
 		default : break;
 	}
