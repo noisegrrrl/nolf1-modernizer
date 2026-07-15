@@ -45,8 +45,12 @@ The goal of NOLF Modernizer is to help fix some long standing bugs, and update s
 - Added missing ambient track for the Main Theme to the Jukebox.
 - Added some jukebox strings to CRes.dll
 
-## Patch 5
+## Patch 5?
 - Added a bind a key to toggle crouch instead of holding it based on shellcracker's implementation.
+- Allow opening the console with Shift+Esc.
+- Allow closing popups with right mouse button and "activate" key.
+- Remember what ammo was last used with which weapon.
+- Fix sunglasses zoom in widescreen mode (add black bars on left/right).
 
 ## Additional Config/Console Commands
 
